@@ -21,8 +21,13 @@ protected:
 	virtual void BeginPlay() override;
 
 	// The room to spawn
-	UPROPERTY(EditDefaultsOnly, Category = "C++")
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "C++")
 	TSubclassOf<ARoom> RoomToSpawn;
+
+	UFUNCTION()
+	void SpawnRoom();
+
+	FTimerHandle TimerHandle_SpawnWall;
 	
 public:
 	// Called every frame

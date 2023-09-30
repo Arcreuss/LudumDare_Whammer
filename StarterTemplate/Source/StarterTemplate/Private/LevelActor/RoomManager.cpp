@@ -15,11 +15,15 @@ ARoomManager::ARoomManager()
 void ARoomManager::BeginPlay()
 {
 	Super::BeginPlay();
+	SpawnRoom();
+	GetWorldTimerManager().SetTimer(TimerHandle_SpawnWall, this, &ARoomManager::SpawnRoom, 10.0f, true);
+}
 
+void ARoomManager::SpawnRoom()
+{
 	if (RoomToSpawn)
 	{
 		const auto Room = GetWorld()->SpawnActor<ARoom>(RoomToSpawn, GetActorLocation(), FRotator(0, 0, 0));
-		Room->GetBoxMesh()->SetWorldScale3D(FVector(3,3,1));
 	}
 }
 

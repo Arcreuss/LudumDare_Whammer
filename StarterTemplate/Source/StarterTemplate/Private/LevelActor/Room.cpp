@@ -25,9 +25,29 @@ void ARoom::BeginPlay()
 	Super::BeginPlay();
 
 	const int32 RandomIndex = FMath::RandRange(0, 2);
+	const int32 RandomRotation = FMath::RandRange(0, 3);
+	
 	
 	if (Meshes[RandomIndex])
 		BaseMesh->SetStaticMesh(Meshes[RandomIndex]);
+		switch (RandomRotation)
+		{
+		default :
+			BaseMesh->SetRelativeRotation(FRotator(0, 0, 0));
+			break;
+		case 0:
+			BaseMesh->SetRelativeRotation(FRotator(0, 0, 0));
+			break;
+		case 1:
+			BaseMesh->SetRelativeRotation(FRotator(0, 90, 0 ));
+			break;
+		case 2:
+			BaseMesh->SetRelativeRotation(FRotator(0, 180, 0));
+			break;
+		case 3:
+			BaseMesh->SetRelativeRotation(FRotator(0, 270, 0));
+			break;
+		}
 }
 
 // Called every frame
