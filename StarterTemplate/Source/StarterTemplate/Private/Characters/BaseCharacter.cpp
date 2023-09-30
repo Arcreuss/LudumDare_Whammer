@@ -25,7 +25,6 @@ ABaseCharacter::ABaseCharacter()
 void ABaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // ---------------------------------------------------------------------
@@ -61,5 +60,3 @@ void ABaseCharacter::Attack()
 void ABaseCharacter::OnAttack_Implementation()
 {
 }
-
-
