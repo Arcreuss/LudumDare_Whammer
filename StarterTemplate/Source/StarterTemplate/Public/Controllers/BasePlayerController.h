@@ -33,6 +33,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputAction> LookInputAction;
 
+	UPROPERTY(EditAnywhere, Category="Input")
+	TObjectPtr<UInputAction> JumpInputAction;
+
 	/**
 	 * @brief Move the character when input is triggered
 	 * @param InputActionValue 
@@ -43,6 +46,11 @@ protected:
 	 * @param InputActionValue 
 	 */
 	void InputLook(const FInputActionValue& InputActionValue);
+	/**
+	 * @brief Move the character (up) when input is triggered
+	 * @param InputActionValue 
+	 */
+	void InputJump(const FInputActionValue& InputActionValue);
 	
 	// Input components
 	UPROPERTY(EditAnywhere, Category = "Input")

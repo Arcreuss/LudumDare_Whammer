@@ -8,6 +8,7 @@
 //Inputs Gameplay Tags                              Keyboard example   or  Controller example
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Input_Move);		// WASD            or  left TS
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Input_Run);	    // Ctrl            or  left TS button
+UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Input_Jump);	    // Space Bar       or  A (Xbox)
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Input_Primary)   // left click      or  A
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Input_Secondary)	// right click     or  B
 UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Input_Utility)	// E               or  X
