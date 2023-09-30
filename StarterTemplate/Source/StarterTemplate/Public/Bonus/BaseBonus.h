@@ -26,7 +26,7 @@ public:
 	FOnDestroy OnDestroy;
 	
 	UPROPERTY(BlueprintReadOnly)
-	int Life = 2; //Number of Hammer hit we need to destroy the bonus
+	int Life = 1; //Number of Hammer hit we need to destroy the bonus
 
 	UFUNCTION(BlueprintCallable)
 	void DecreaseLife();

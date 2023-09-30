@@ -34,10 +34,20 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	float AttackSpped = 1;
 
+	UPROPERTY(BlueprintReadWrite)
+	float MoveSpeed = 1;
+
 	UFUNCTION(BlueprintCallable)
 	void UpgradeAttackSpeed(float Upgrade);
-
+	
+	UFUNCTION(BlueprintCallable)
 	void DecreaseAttackSpeed(float Downgrade);
+
+	UFUNCTION(BlueprintCallable)
+	void UpgradeMoveSpeed(float Upgrade);
+
+	UFUNCTION(BlueprintCallable)
+	void DecreaseMoveSpeed(float Downgrade);
 
 protected:
 
