@@ -42,4 +42,14 @@ UCameraComponent* ABaseCharacter::GetCamera() const
 	return Camera;
 }
 
+void ABaseCharacter::UpgradeAttackSpeed(float Upgrade)
+{
+	AttackSpped += Upgrade;
+}
+
+void ABaseCharacter::DecreaseAttackSpeed(float Downgrade)
+{
+	AttackSpped -= Downgrade;
+}
+
 
