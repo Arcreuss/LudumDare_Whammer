@@ -19,7 +19,7 @@ void ARoomManager::BeginPlay()
 	if (RoomToSpawn)
 	{
 		const auto Room = GetWorld()->SpawnActor<ARoom>(RoomToSpawn, GetActorLocation(), FRotator(0, 0, 0));
-		Room->GetBoxMesh()->SetWorldScale3D(FVector(1,1,1));
+		Room->GetBoxMesh()->SetWorldScale3D(FVector(3,3,1));
 	}
 }
 
