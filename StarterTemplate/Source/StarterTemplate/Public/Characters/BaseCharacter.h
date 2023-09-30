@@ -31,6 +31,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	class UCameraComponent* GetCamera() const;
 
+	UPROPERTY(BlueprintReadWrite)
+	float AttackSpped = 1;
+
+	UFUNCTION(BlueprintCallable)
+	void UpgradeAttackSpeed(float Upgrade);
+
+	void DecreaseAttackSpeed(float Downgrade);
+
 protected:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Camera")
