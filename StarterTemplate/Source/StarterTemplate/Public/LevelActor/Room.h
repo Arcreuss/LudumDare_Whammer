@@ -27,10 +27,13 @@ protected:
 	TArray<TObjectPtr<UStaticMesh>> Meshes;
 
 	// Base Mesh of Room
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	TObjectPtr<UStaticMeshComponent> BaseMesh;
 	
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(BlueprintReadWrite)
+	int32 RandomIndex = FMath::RandRange(0, 2);
+
+	UPROPERTY(BlueprintReadWrite)
+	int32 RandomRotation = FMath::RandRange(0, 3);
 };
