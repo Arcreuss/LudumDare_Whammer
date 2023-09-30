@@ -25,7 +25,6 @@ ABaseCharacter::ABaseCharacter()
 void ABaseCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // ---------------------------------------------------------------------
@@ -52,4 +51,12 @@ void ABaseCharacter::DecreaseAttackSpeed(float Downgrade)
 	AttackSpeed -= Downgrade;
 }
 
+void ABaseCharacter::Attack()
+{
+	if(bCanAttack)
+		OnAttack();
+}
 
+void ABaseCharacter::OnAttack_Implementation()
+{
+}

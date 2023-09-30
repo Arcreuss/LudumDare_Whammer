@@ -20,7 +20,6 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
 	// Base input actions
 	virtual void SetupInputComponent() override;
 	void OnAbilityInputTagPressed(FGameplayTag InputTag);
@@ -35,6 +34,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputAction> JumpInputAction;
+
+	UPROPERTY(EditAnywhere, Category="Input")
+	TObjectPtr<UInputAction> AttackInputAction;
 
 	/**
 	 * @brief Move the character when input is triggered
@@ -51,6 +53,12 @@ protected:
 	 * @param InputActionValue 
 	 */
 	void InputJump(const FInputActionValue& InputActionValue);
+
+	/**
+	 * @brief Attack
+	 * @param InputActionValue 
+	 */
+	void InputAttack(const FInputActionValue& InputActionValue);
 	
 	// Input components
 	UPROPERTY(EditAnywhere, Category = "Input")
