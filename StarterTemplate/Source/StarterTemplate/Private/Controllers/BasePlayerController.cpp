@@ -2,6 +2,7 @@
 
 #include "Controllers/BasePlayerController.h"
 #include "EnhancedInputSubsystems.h"
+#include "Characters/BaseCharacter.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/PawnMovementComponent.h"
 
@@ -52,6 +53,8 @@ void ABasePlayerController::SetupInputComponent()
 	TaggedInputComponent->BindAction(MoveInputAction,ETriggerEvent::Triggered, this,  &ThisClass::InputMove);
 	TaggedInputComponent->BindAction(LookInputAction,ETriggerEvent::Triggered, this,  &ThisClass::InputLook);
 	TaggedInputComponent->BindAction(JumpInputAction,ETriggerEvent::Triggered, this,  &ThisClass::InputJump);
+	TaggedInputComponent->BindAction(AttackInputAction,ETriggerEvent::Triggered, this,  &ThisClass::InputAttack);
+	
 }
 
 void ABasePlayerController::OnAbilityInputTagPressed(FGameplayTag InputTag)
@@ -70,6 +73,13 @@ void ABasePlayerController::OnAbilityInputTagHeld(FGameplayTag InputTag)
 	GEngine->AddOnScreenDebugMessage(3, 3.f, FColor::Orange, *InputTag.ToString());
 }
 
+void ABasePlayerController::InputAttack(const FInputActionValue& InputActionValue)
+{
+	if (ABaseCharacter* ControlledCharacter = GetPawn<ABaseCharacter>())
+	{
+		ControlledCharacter->Attack();
+	}
+}
 
 void ABasePlayerController::InputMove(const FInputActionValue& InputActionValue)
 {

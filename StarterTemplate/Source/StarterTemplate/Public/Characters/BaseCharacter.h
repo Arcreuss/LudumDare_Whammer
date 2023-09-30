@@ -40,7 +40,16 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void DecreaseAttackSpeed(float Downgrade);
 
+	UFUNCTION(BlueprintCallable)
+	void Attack();
+
 protected:
+
+	UPROPERTY(BlueprintReadWrite)
+	bool bCanAttack = true;
+
+	UFUNCTION(BlueprintNativeEvent)
+	void OnAttack();
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Camera")
 	TObjectPtr<USpringArmComponent> SpringArm;
