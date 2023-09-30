@@ -44,22 +44,12 @@ UCameraComponent* ABaseCharacter::GetCamera() const
 
 void ABaseCharacter::UpgradeAttackSpeed(float Upgrade)
 {
-	AttackSpped += Upgrade;
+	AttackSpeed += Upgrade;
 }
 
 void ABaseCharacter::DecreaseAttackSpeed(float Downgrade)
 {
-	AttackSpped -= Downgrade;
-}
-
-void ABaseCharacter::UpgradeMoveSpeed(float Upgrade)
-{
-	MoveSpeed += Upgrade;
-}
-
-void ABaseCharacter::DecreaseMoveSpeed(float Downgrade)
-{
-	MoveSpeed -= Downgrade;
+	AttackSpeed -= Downgrade;
 }
 
 
