@@ -25,10 +25,11 @@ protected:
 	TSubclassOf<ARoom> RoomToSpawn;
 
 	UFUNCTION()
+	void OnRoomDestroyed(AActor* DestroyedActor);
+	UFUNCTION()
 	void SpawnRoom();
 
-	FTimerHandle TimerHandle_SpawnWall;
-	
+	int RoomCount = 1;
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

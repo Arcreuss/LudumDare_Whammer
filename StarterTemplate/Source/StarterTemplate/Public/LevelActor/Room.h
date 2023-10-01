@@ -17,18 +17,30 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	UStaticMeshComponent* GetBoxMesh() const;
+
+	UFUNCTION(BlueprintCallable)
+	void SetCount(int NewCount);
+
+	UFUNCTION(BlueprintCallable)
+	int GetCount() const;
+
+	UFUNCTION(BlueprintNativeEvent)
+	void OnCountChanged();
 	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
+	
 	// Array of meshes
 	UPROPERTY(EditDefaultsOnly, Category = "C++")
 	TArray<TObjectPtr<UStaticMesh>> Meshes;
 
 	// Base Mesh of Room
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(BlueprintReadWrite,EditDefaultsOnly, Category = "C++")
 	TObjectPtr<UStaticMeshComponent> BaseMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "C++")
+	int Count = 0;
 	
 public:
 	UPROPERTY(BlueprintReadWrite)

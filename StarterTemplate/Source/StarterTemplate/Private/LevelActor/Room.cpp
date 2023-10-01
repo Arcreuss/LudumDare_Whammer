@@ -3,7 +3,6 @@
 
 #include "LevelActor/Room.h"
 
-// Sets default values
 ARoom::ARoom()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -11,12 +10,26 @@ ARoom::ARoom()
 	
 	BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BoxMesh"));
 	BaseMesh->SetupAttachment(RootComponent);
-		
 }
 
 UStaticMeshComponent* ARoom::GetBoxMesh() const
 {
 	return BaseMesh;
+}
+
+void ARoom::SetCount(int NewCount)
+{
+	Count = NewCount;
+}
+
+int ARoom::GetCount() const
+{
+	return Count;
+}
+
+void ARoom::OnCountChanged_Implementation()
+{
+	
 }
 
 // Called when the game starts or when spawned
