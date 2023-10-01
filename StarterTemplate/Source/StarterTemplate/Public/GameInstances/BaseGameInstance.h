@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "BSGameInstance.h"
-#include "GameFramework/Actor.h"
 #include "BaseGameInstance.generated.h"
 
 UCLASS()
