@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BSGameInstance.h"
 #include "GameFramework/Actor.h"
 #include "BaseGameInstance.generated.h"
 
 UCLASS()
-class STARTERTEMPLATE_API UBaseGameInstance : public UGameInstance
+class STARTERTEMPLATE_API UBaseGameInstance : public UBSGameInstance
 {
 	GENERATED_BODY()
 
