@@ -16,7 +16,11 @@ void ARoomManager::BeginPlay()
 {
 	Super::BeginPlay();
 	SpawnRoom();
-	GetWorldTimerManager().SetTimer(TimerHandle_SpawnWall, this, &ARoomManager::SpawnRoom, 10.0f, true);
+}
+
+void ARoomManager::OnRoomDestroyed(AActor* DestroyedActor)
+{
+	SpawnRoom();
 }
 
 void ARoomManager::SpawnRoom()
@@ -24,6 +28,10 @@ void ARoomManager::SpawnRoom()
 	if (RoomToSpawn)
 	{
 		const auto Room = GetWorld()->SpawnActor<ARoom>(RoomToSpawn, GetActorLocation(), FRotator(0, 0, 0));
+		Room->SetCount(RoomCount);
+		Room->OnCountChanged();
+		Room->OnDestroyed.AddDynamic(this, &ARoomManager::OnRoomDestroyed);
+		RoomCount++;
 	}
 }
 
